@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
+  <!-- Card Background: Warm Parchment (KINEO.IRIS Palette) -->
+  <rect width="1050" height="600" fill="#F7F5F0"/>
+
+  <!-- Inset Border (Safe Margin) -->
+  <rect x="50" y="50" width="950" height="500" fill="none" stroke="#E3DFC9" stroke-width="1.5"/>
+
+  <!-- Top Brand Mark -->
+  <text x="90" y="115" font-family="'Italiana', 'Cormorant Garamond', Georgia, serif" font-size="28" font-weight="400" letter-spacing="4" fill="#121110">
+    LENS &amp; LIGHT STUDIO
+  </text>
+  <text x="90" y="135" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600" letter-spacing="4" fill="#8C6F4B">
+    BHOPAL, MADHYA PRADESH
+  </text>
+  <line x1="90" y1="155" x2="960" y2="155" stroke="#E3DFC9" stroke-width="1"/>
+
+  <!-- Left: Photographer Details -->
+  <g transform="translate(90, 240)">
+    <text x="0" y="0" font-family="'Italiana', 'Cormorant Garamond', Georgia, serif" font-size="44" font-weight="400" letter-spacing="2" fill="#121110">
+      VIVEK
+    </text>
+    <text x="0" y="32" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="600" letter-spacing="3" fill="#8C6F4B">
+      CREATIVE DIRECTOR &amp; LEAD PHOTOGRAPHER
+    </text>
+    <text x="0" y="65" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="400" fill="#55534E">
+      Specializing in Wedding Ceremonies, Pre-Weddings &amp; Family Heirlooms
+    </text>
+  </g>
+
+  <!-- Right: Contact Channels -->
+  <g transform="translate(600, 230)">
+    <!-- Phone / WhatsApp -->
+    <g transform="translate(0, 0)">
+      <circle cx="12" cy="10" r="10" fill="#121110"/>
+      <path d="M9 7 L15 13 M15 7 L9 13" stroke="#B89D7A" stroke-width="1.5"/>
+      <text x="35" y="15" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="600" fill="#121110">
+        +91 98765 43210
+      </text>
+      <text x="180" y="14" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="700" fill="#25D366" letter-spacing="1">
+        (WHATSAPP)
+      </text>
+    </g>
+
+    <!-- Email -->
+    <g transform="translate(0, 45)">
+      <text x="35" y="15" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12.5" font-weight="500" fill="#44423E">
+        hello@lensandlightstudio.com
+      </text>
+    </g>
+
+    <!-- Web -->
+    <g transform="translate(0, 90)">
+      <text x="35" y="15" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="600" fill="#121110">
+        www.lensandlightstudio.com
+      </text>
+    </g>
+
+    <!-- Studio Location -->
+    <g transform="translate(0, 135)">
+      <text x="35" y="15" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11.5" font-weight="400" fill="#55534E">
+        Bhopal, Madhya Pradesh • Destination Nationwide
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <line x1="90" y1="480" x2="960" y2="480" stroke="#E3DFC9" stroke-width="1"/>
+  <text x="525" y="515" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" font-weight="500" letter-spacing="2.5" fill="#88857E">
+    HONEST EMOTION • TIMELESS HARMONY • TWO-PHOTOGRAPHER TEAM
+  </text>
+</svg>

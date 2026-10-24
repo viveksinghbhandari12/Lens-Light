@@ -1,0 +1,151 @@
+.footer {
+  background-color: #0E0D0C;
+  color: #EDEAE3;
+  padding-top: clamp(4rem, 7vw, 6.5rem);
+  padding-bottom: 2.5rem;
+  margin-top: auto;
+  border-top: 1px solid var(--color-border-dark);
+}
+
+.footerContainer {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 3.5rem);
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.mastheadBrand {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: var(--color-text-champagne);
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+.mastheadSub {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: var(--color-accent-bronze);
+  margin-top: 0.4rem;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.studioBio {
+  font-size: 0.95rem;
+  color: #A3A099;
+  line-height: 1.75;
+  max-width: 440px;
+  margin-bottom: 1.75rem;
+}
+
+.whatsappActionWrapper {
+  margin-top: 0.5rem;
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.columnTitle {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-accent-bronze);
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.linkList a {
+  font-size: 0.9rem;
+  color: #CFCBC2;
+  transition: var(--transition-smooth);
+}
+
+.linkList a:hover {
+  color: var(--color-text-champagne);
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+.serviceLocation, .subtleText {
+  font-size: 0.85rem;
+  color: #88857E;
+}
+
+.contactItem {
+  font-size: 0.9rem;
+  color: #CFCBC2;
+}
+
+.bottomBar {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: 0.825rem;
+  color: #7A7872;
+  margin-bottom: 0;
+}
+
+.policyTags {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #66645E;
+}
+
+@media (max-width: 900px) {
+  .topSection {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .linksGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bottomBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .policyTags {
+    flex-wrap: wrap;
+  }
+}

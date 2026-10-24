@@ -1,0 +1,136 @@
+.form {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-card);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+}
+
+.errorMessage {
+  background-color: rgba(224, 36, 36, 0.15);
+  border: 1px solid rgba(248, 180, 180, 0.3);
+  color: #F8B4B4;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-text-champagne);
+  margin-bottom: 0.5rem;
+}
+
+.required {
+  color: var(--color-accent-bronze);
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  background-color: rgba(18, 17, 16, 0.6);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  transition: var(--transition-smooth);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--color-accent-bronze);
+  box-shadow: 0 0 0 2px rgba(184, 157, 122, 0.2);
+  background-color: rgba(18, 17, 16, 0.9);
+}
+
+.select option {
+  background-color: var(--color-bg-card);
+  color: var(--color-text-light);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.privacyNote {
+  font-size: 0.775rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* Success Card */
+.successCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-card);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+}
+
+.successIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(37, 211, 102, 0.15);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  color: var(--color-whatsapp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  color: var(--color-text-champagne);
+  margin-bottom: 0.75rem;
+}
+
+.successText {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto 1.75rem;
+}
+
+.resetBtn {
+  display: block;
+  margin: 1.5rem auto 0;
+  font-size: 0.825rem;
+  color: var(--color-accent-bronze);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.resetBtn:hover {
+  color: var(--color-text-champagne);
+}
+
+@media (max-width: 680px) {
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

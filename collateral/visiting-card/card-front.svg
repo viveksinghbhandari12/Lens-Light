@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
+  <!-- Card Background: Deep Espresso Black (KINEO.IRIS Signature) -->
+  <rect width="1050" height="600" fill="#121110"/>
+
+  <!-- Subtle Inset Gold Foil Hairline (Safe Margin) -->
+  <rect x="40" y="40" width="970" height="520" fill="none" stroke="#2B2825" stroke-width="1.5"/>
+
+  <!-- Center Aperture Monogram -->
+  <g transform="translate(475, 170)">
+    <circle cx="50" cy="50" r="48" stroke="#B89D7A" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <circle cx="50" cy="50" r="36" stroke="#EDE2CD" stroke-width="2" fill="none"/>
+    <circle cx="50" cy="50" r="15" fill="#B89D7A"/>
+    <path d="M34 22 L66 22" stroke="#B89D7A" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Typography: Italiana Flared Serif -->
+  <text x="525" y="340" text-anchor="middle" font-family="'Italiana', 'Cormorant Garamond', Georgia, serif" font-size="52" font-weight="400" letter-spacing="8" fill="#EDE2CD">
+    LENS &amp; LIGHT
+  </text>
+  <text x="525" y="375" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="9" fill="#B89D7A">
+    PHOTOGRAPHY • BHOPAL
+  </text>
+
+  <!-- Divider -->
+  <line x1="435" y1="410" x2="615" y2="410" stroke="#B89D7A" stroke-width="1" opacity="0.4"/>
+
+  <!-- Tagline -->
+  <text x="525" y="445" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11.5" font-weight="400" letter-spacing="4" fill="#A3A099">
+    TIMELESS VISUAL LEGACIES
+  </text>
+
+  <!-- Corner Crop / Registration Marks for Print Proofing -->
+  <path d="M15 25 L35 25 M25 15 L25 35" stroke="#2B2825" stroke-width="1"/>
+  <path d="M1015 25 L1035 25 M1025 15 L1025 35" stroke="#2B2825" stroke-width="1"/>
+  <path d="M15 575 L35 575 M25 565 L25 585" stroke="#2B2825" stroke-width="1"/>
+  <path d="M1015 575 L1035 575 M1025 565 L1025 585" stroke="#2B2825" stroke-width="1"/>
+</svg>

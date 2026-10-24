@@ -1,0 +1,260 @@
+/* KINEO.IRIS THEME - LENS & LIGHT STUDIO (BHOPAL) */
+/* MOODY, CINEMATIC, EARTHY LUXURY EDITORIAL PALETTE */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Rich Earthy Dark Palette */
+  --color-bg-dark: #121110;           /* Deep espresso obsidian */
+  --color-bg-card: #1C1A18;           /* Dark mocha card container */
+  --color-bg-olive: #2B3023;          /* Deep earthy moss olive */
+  --color-bg-olive-dark: #1E2318;     /* Darker forest shade */
+  --color-bg-light: #F7F5F0;          /* Warm alabaster parchment */
+  --color-surface-light: #FFFFFF;
+
+  /* Typography Colors */
+  --color-text-champagne: #EDE2CD;    /* Primary display headline color */
+  --color-text-light: #F4F2EC;        /* Pure off-white body for dark mode */
+  --color-text-muted: #A3A099;        /* Muted sand graphite */
+  --color-text-dark: #141312;         /* For light containers */
+  --color-text-dark-muted: #55534E;
+
+  /* Warm Bronze / Gold Accents */
+  --color-accent-bronze: #B89D7A;     /* Soft warm bronze for pills & buttons */
+  --color-accent-bronze-hover: #CCA984;
+  --color-accent-gold: #D8C39F;       /* Delicate champagne gold */
+  --color-border-dark: rgba(216, 195, 159, 0.18);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1EBE5D;
+
+  /* Fonts */
+  --font-display: 'Italiana', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Radii & Shadows */
+  --radius-card: 14px;
+  --radius-pill: 9999px;
+  --radius-sm: 6px;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --container-max: 1380px;
+}
+
+/* RESET & BASE */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  line-height: 1.65;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-champagne);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* LAYOUT CONTAINER */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 3.5vw, 3.5rem);
+  padding-right: clamp(1.25rem, 3.5vw, 3.5rem);
+}
+
+.framed-page {
+  padding-bottom: clamp(3rem, 6vw, 6rem);
+}
+
+/* SECTION HEADINGS */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--color-accent-bronze);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  margin: 0;
+  color: var(--color-text-champagne);
+}
+
+/* BUTTONS */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.775rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Bronze Solid Pill (KINEO.IRIS Signature) */
+.btn-pill-bronze {
+  background-color: var(--color-accent-bronze);
+  color: #121110;
+  font-weight: 700;
+}
+
+.btn-pill-bronze:hover {
+  background-color: var(--color-accent-bronze-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(184, 157, 122, 0.35);
+}
+
+.btn-pill-outline {
+  background-color: transparent;
+  color: var(--color-text-champagne);
+  border: 1px solid var(--color-accent-bronze);
+}
+
+.btn-pill-outline:hover {
+  background-color: var(--color-accent-bronze);
+  color: #121110;
+  transform: translateY(-2px);
+}
+
+.btn-pill-whatsapp {
+  background-color: var(--color-whatsapp);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.btn-pill-whatsapp:hover {
+  background-color: var(--color-whatsapp-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+/* ACCESSIBILITY FOCUS */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-accent-bronze);
+  outline-offset: 3px;
+}
+
+/* SKIP TO CONTENT */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--color-accent-bronze);
+  color: #121110;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  z-index: 9999;
+  border-radius: var(--radius-sm);
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* CUSTOM BROWSER SIDE SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121110;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2E2A24;
+  border-radius: 4px;
+  border: 1px solid rgba(216, 195, 159, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-bronze);
+}
+

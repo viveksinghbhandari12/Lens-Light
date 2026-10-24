@@ -1,0 +1,212 @@
+// Lens & Light Studio - Portfolio Data
+// All photographs are 100% authentic studio works (No AI, No stock images)
+
+export const STUDIO_INFO = {
+  name: "Lens & Light Studio",
+  tagline: "Timeless Visual Legacies, Captured in Bhopal",
+  description: "A two-photographer creative team specializing in authentic weddings, poetic pre-weddings, and intimate family milestones across Bhopal, Madhya Pradesh, and destination venues in India.",
+  location: "Bhopal, Madhya Pradesh, India",
+  phone: "+91 98765 43210", // [Client to provide official studio number]
+  whatsapp: "+919876543210", // [Client to provide official WhatsApp number]
+  email: "hello@lensandlightstudio.com",
+  instagram: "@lensandlightstudio",
+  serviceAreas: ["Bhopal", "Indore", "Gwalior", "Ujjain", "Destination All-India"],
+};
+
+export const PORTFOLIO_ITEMS = [
+  // --- Weddings ---
+  {
+    id: "magazine-cover",
+    title: "Vogue Editorial Wedding",
+    category: "weddings",
+    categoryLabel: "Weddings",
+    location: "High-Fashion Editorial",
+    image: "/images/magazine-cover.jpg",
+    description: "Classic black and white luxury editorial cover capturing joyous laughter and dynamic movement.",
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "wedding-heritage",
+    title: "Courtyard of Heritage",
+    category: "weddings",
+    categoryLabel: "Weddings",
+    location: "Heritage Garden Courtyard",
+    image: "/images/wedding-heritage.jpg",
+    description: "Authentic ivory silk kurta and gold tissue couture, framed against timeless architectural arches.",
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "temple-vows",
+    title: "The Sacred Gopuram",
+    category: "weddings",
+    categoryLabel: "Weddings",
+    location: "Stone Temple Sanctum",
+    image: "/images/temple-vows.jpg",
+    description: "Sacred matrimonial vows taken on a hand-carved stone balcony before an imposing temple vimana.",
+    featured: true,
+    aspect: "portrait",
+  },
+
+  // --- Pre-Wedding ---
+  {
+    id: "horse-editorial",
+    title: "Lost in Her Gaze",
+    category: "pre-wedding",
+    categoryLabel: "Pre-Wedding",
+    location: "Highland Equine Sanctuary",
+    image: "/images/horse-editorial.jpg",
+    description: "Equestrian bridal portrait with romantic highland mountain backdrop, evoking cinematic poetry.",
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "architectural-reach",
+    title: "Skyward Perspective",
+    category: "pre-wedding",
+    categoryLabel: "Pre-Wedding",
+    location: "Heritage Archways",
+    image: "/images/architectural-reach.jpg",
+    description: "Dramatic upward angle between historic neoclassical columns, celebrating celestial romance.",
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "meadow-embrace",
+    title: "Meadow Embrace",
+    category: "pre-wedding",
+    categoryLabel: "Pre-Wedding",
+    location: "Open Field Sanctuary",
+    image: "/images/meadow-embrace.jpg",
+    description: "An intimate, unscripted embrace under expansive cumulus skies and golden hour light.",
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "wedding-veil",
+    title: "Whispering Sandstone",
+    category: "pre-wedding",
+    categoryLabel: "Pre-Wedding",
+    location: "Royal Palace Pavilions",
+    image: "/images/wedding-veil.jpg",
+    description: "A dramatic pre-wedding composition with a flowing sheer veil floating amidst historic sandstone arches.",
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "palace-silhouette",
+    title: "The Golden Jaali",
+    category: "pre-wedding",
+    categoryLabel: "Pre-Wedding",
+    location: "Heritage Fort Pavilion",
+    image: "/images/palace-silhouette.jpg",
+    description: "An intimate couple silhouette illuminated by radiant daylight streaming through intricate stone jaali screens.",
+    featured: true,
+    aspect: "portrait",
+  },
+
+  // --- Baby & Family Milestones ---
+  {
+    id: "family-wedding-stage",
+    title: "Generations in Celebration",
+    category: "baby-family",
+    categoryLabel: "Baby & Family",
+    location: "Bhopal Wedding Celebration",
+    image: "/images/family-wedding-stage.jpg",
+    description: "Multi-generational family bond captured in full ceremonial splendour, shared smiles, and festive warmth.",
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "family-studio-portrait",
+    title: "The Heirloom Legacy",
+    category: "baby-family",
+    categoryLabel: "Baby & Family",
+    location: "Bhopal Studio Session",
+    image: "/images/family-studio-portrait.jpg",
+    description: "A dignified family portrait balancing formal grace, hand-embroidered silks, and unspoken familial pride.",
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "family-outdoor-lake",
+    title: "Lakeside Family Whispers",
+    category: "baby-family",
+    categoryLabel: "Baby & Family",
+    location: "Lakeside Nature Sanctuary",
+    image: "/images/family-outdoor-lake.jpg",
+    description: "Tender outdoor portrait by the water as parents hold their toddler and baby in warm knitwear.",
+    featured: true,
+    aspect: "portrait",
+  },
+  {
+    id: "baby-portrait",
+    title: "First Blessings",
+    category: "baby-family",
+    categoryLabel: "Baby & Family",
+    location: "Intimate Family Session",
+    image: "/images/baby-portrait.jpg",
+    description: "Parents kissing their newborn in traditional Kasavu silk attire, capturing the serenity of familial beginnings.",
+    featured: true,
+    aspect: "portrait",
+  },
+];
+
+export const CATEGORIES = [
+  { key: "all", label: "All Collections" },
+  { key: "weddings", label: "Weddings" },
+  { key: "pre-wedding", label: "Pre-Wedding" },
+  { key: "baby-family", label: "Baby & Family" },
+];
+
+export const EDITORIAL_SIDE_SCROLL = [
+  {
+    title: "Vogue Wedding Cover",
+    category: "Editorial B&W",
+    image: "/images/magazine-cover.jpg",
+    aspect: "3/4",
+  },
+  {
+    title: "Generations in Celebration",
+    category: "Family Heirloom",
+    image: "/images/family-wedding-stage.jpg",
+    aspect: "3/4",
+  },
+  {
+    title: "Lost in Her Gaze",
+    category: "Equestrian Romance",
+    image: "/images/horse-editorial.jpg",
+    aspect: "3/4",
+  },
+  {
+    title: "The Heirloom Legacy",
+    category: "Family Milestone",
+    image: "/images/family-studio-portrait.jpg",
+    aspect: "3/4",
+  },
+  {
+    title: "Skyward Perspective",
+    category: "Architectural Grandeur",
+    image: "/images/architectural-reach.jpg",
+    aspect: "3/4",
+  },
+  {
+    title: "Lakeside Whispers",
+    category: "Gentle Outdoors",
+    image: "/images/family-outdoor-lake.jpg",
+    aspect: "3/4",
+  },
+  {
+    title: "Meadow Embrace",
+    category: "Golden Hour Film",
+    image: "/images/meadow-embrace.jpg",
+    aspect: "3/4",
+  },
+  {
+    title: "First Blessings",
+    category: "Newborn Heritage",
+    image: "/images/baby-portrait.jpg",
+    aspect: "3/4",
+  },
+];

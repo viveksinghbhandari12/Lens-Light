@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lens & Light Studio — Visiting Card Print Specification & Proof</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: #F0EFEA;
+      color: #121212;
+      margin: 0;
+      padding: 3rem 1.5rem;
+    }
+    .proof-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.75rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #E5E5E5;
+      padding-bottom: 1.5rem;
+    }
+    .cards-display {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .card-proof-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: #A88B63;
+    }
+    .card-svg-wrapper {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border: 1px solid #E0DED9;
+    }
+    .card-svg-wrapper img, .card-svg-wrapper object {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      font-size: 0.925rem;
+    }
+    .specs-table th, .specs-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #EBE9E4;
+    }
+    .specs-table th {
+      background-color: #F8F7F4;
+      font-weight: 600;
+      color: #121212;
+      width: 35%;
+    }
+    .badge {
+      display: inline-block;
+      background: #EFECE6;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .cards-display {
+        grid-template-columns: 1fr;
+      }
+      .proof-container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="proof-container">
+  <h1>LENS &amp; LIGHT STUDIO</h1>
+  <div class="subtitle">
+    <strong>Visiting Card Production Specification &amp; Digital Proof</strong> • Heptley GROW Deliverable • Bhopal, MP
+  </div>
+
+  <div class="cards-display">
+    <div class="card-proof-box">
+      <span class="card-label">Front Side (Foil Stamped / Obsidian)</span>
+      <div class="card-svg-wrapper">
+        <img src="card-front.svg" alt="Visiting Card Front Proof">
+      </div>
+    </div>
+
+    <div class="card-proof-box">
+      <span class="card-label">Back Side (Alabaster Ivory / Contact)</span>
+      <div class="card-svg-wrapper">
+        <img src="card-back.svg" alt="Visiting Card Back Proof">
+      </div>
+    </div>
+  </div>
+
+  <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.85rem; margin-bottom: 0.5rem;">
+    Print Production Specifications
+  </h2>
+  <table class="specs-table">
+    <tr>
+      <th>Trim Size</th>
+      <td><strong>3.5 inches × 2.0 inches</strong> (88.9 mm × 50.8 mm) — Standard Indian / US format</td>
+    </tr>
+    <tr>
+      <th>Bleed Dimension</th>
+      <td><strong>3.0 mm (0.125")</strong> on all four sides (Total artwork canvas: 94.9 mm × 56.8 mm)</td>
+    </tr>
+    <tr>
+      <th>Safe Area Margin</th>
+      <td><strong>4.0 mm</strong> inward from trim edge (keeps all text away from cut blade)</td>
+    </tr>
+    <tr>
+      <th>Resolution &amp; Format</th>
+      <td>Vector Scalable SVG / 300 DPI high-definition CMYK export ready</td>
+    </tr>
+    <tr>
+      <th>Recommended Paper Stock</th>
+      <td><strong>350 – 400 GSM</strong> Velvet Matte / Uncoated Cotton Linen Art Board</td>
+    </tr>
+    <tr>
+      <th>Special Finishes</th>
+      <td>
+        <span class="badge">Front</span> Matte Black Velvet Lamination + Metallic Champagne Gold Foil Stamping on Logo &amp; Monogram<br>
+        <span class="badge">Back</span> Crisp 2-color CMYK offset print with sharp micro-typography
+      </td>
+    </tr>
+    <tr>
+      <th>Color Palette (CMYK Values)</th>
+      <td>
+        <strong>Obsidian Carbon:</strong> C:40 M:30 Y:30 K:100<br>
+        <strong>Champagne Gold Foil:</strong> Pantone 871 C / Metallic Foil (Digital: #C5A880)<br>
+        <strong>Alabaster White:</strong> C:2 M:2 Y:3 K:0 (#FBFBFA)
+      </td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

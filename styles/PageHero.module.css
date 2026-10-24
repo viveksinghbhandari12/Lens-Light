@@ -1,0 +1,135 @@
+.pageHero {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--color-border-dark);
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.heroContent {
+  max-width: 860px;
+}
+
+.breadcrumb {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent-bronze);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  color: var(--color-text-champagne);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  max-width: 720px;
+  margin-bottom: 1.75rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Editorial Story Card */
+.editorialShowcase {
+  margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-dark);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.editorialGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: center;
+}
+
+.editorialImageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--color-border-dark);
+}
+
+.editorialImage {
+  object-fit: cover !important;
+}
+
+.editorialDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailsTag {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-bronze);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.detailsTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--color-text-champagne);
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.detailsText {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.pointsList {
+  list-style: none;
+  margin: 1.25rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pointsItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+.pointIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent-bronze);
+  flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .editorialGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

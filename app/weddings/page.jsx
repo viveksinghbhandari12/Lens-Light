@@ -44,7 +44,7 @@ export default function WeddingsPage() {
         </section>
 
         {/* Editorial Story 1: Temple Vows */}
-        <section className={styles.editorialShowcase} aria-label="Featured Wedding Story">
+        <section className={styles.editorialShowcase} data-reveal="soft-zoom" aria-label="Featured Wedding Story">
           <div className={styles.editorialGrid}>
             <div className={styles.editorialImageContainer}>
               <Image
@@ -64,7 +64,7 @@ export default function WeddingsPage() {
                 Matrimonial vows framed by timeless Dravidian and Central Indian temple architecture. In traditional ceremonies, we prioritize unobtrusive positioning to capture the sanctity of the rituals and the quiet joy between couple and family.
               </p>
 
-              <ul className={styles.pointsList}>
+              <ul className={styles.pointsList} data-stagger>
                 <li className={styles.pointsItem}>
                   <svg className={styles.pointIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -102,7 +102,7 @@ export default function WeddingsPage() {
         </section>
 
         {/* Editorial Story 2: Heritage Courtyard */}
-        <section className={styles.editorialShowcase} aria-label="Heritage Wedding Couture">
+        <section className={styles.editorialShowcase} data-reveal="soft-zoom" aria-label="Heritage Wedding Couture">
           <div className={styles.editorialGrid} style={{ direction: 'rtl' }}>
             <div className={styles.editorialImageContainer} style={{ direction: 'ltr' }}>
               <Image
@@ -121,7 +121,7 @@ export default function WeddingsPage() {
                 Elegance in traditional silk attire. Our approach to bridal and couple portraits balances editorial poise with authentic warmth, creating photographs that look as dignified fifty years from now as they do today.
               </p>
 
-              <ul className={styles.pointsList}>
+              <ul className={styles.pointsList} data-stagger>
                 <li className={styles.pointsItem}>
                   <svg className={styles.pointIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -147,7 +147,7 @@ export default function WeddingsPage() {
 
         {/* Wedding Collection Gallery Preview */}
         <section style={{ marginBottom: '4rem' }} aria-label="Weddings Gallery Highlights">
-          <div className="section-header">
+          <div className="section-header" data-reveal="fade-up">
             <div>
               <span className="section-label">SELECTED WORKS</span>
               <h2 className="section-title">WEDDINGS SHOWCASE</h2>
@@ -157,7 +157,7 @@ export default function WeddingsPage() {
             </Link>
           </div>
 
-          <div className={portfolioStyles.galleryGrid}>
+          <div className={portfolioStyles.galleryGrid} data-stagger>
             {weddingPhotos.map((item) => (
               <div key={item.id} className={portfolioStyles.galleryCard}>
                 <div className={portfolioStyles.cardImageContainer}>

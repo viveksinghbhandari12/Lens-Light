@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import WhatsAppCTA from '@/components/WhatsAppCTA';
@@ -15,6 +15,40 @@ export default function HomePage() {
   const toggleAccordion = (index) => {
     setOpenAccordion(openAccordion === index ? null : index);
   };
+
+  // Passive, GPU-friendly subtle parallax on hero and moments background
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    let ticking = false;
+    const heroEl = document.getElementById('hero');
+    const momentsEl = document.getElementById('moments');
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          if (heroEl && scrollY < window.innerHeight * 1.3) {
+            heroEl.style.setProperty('--hero-scroll-y', `${scrollY * 0.16}px`);
+          }
+          if (momentsEl) {
+            const rect = momentsEl.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              const relativeOffset = (window.innerHeight - rect.top) * 0.09;
+              momentsEl.style.setProperty('--moments-scroll-y', `${relativeOffset}px`);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const whatsappHref = `https://wa.me/${STUDIO_INFO.whatsapp}?text=${encodeURIComponent(
     'Hello Lens & Light Studio, I would like to check availability for a photography session in Bhopal.'
@@ -60,25 +94,41 @@ export default function HomePage() {
 
       {/* 1. KINEO.IRIS SIGNATURE HERO WITH SCALLOP DIVIDER */}
       <section id="hero" className={styles.heroSection} aria-label="Hero Section">
-        <Image
-          src="/images/wedding-veil.jpg"
-          alt="Lens & Light Studio - Timeless wedding photography in Bhopal"
-          fill
-          priority
-          sizes="100vw"
-          className={styles.heroBg}
-        />
+        <div className={styles.heroBgWrapper}>
+          <Image
+            src="/images/wedding-veil.jpg"
+            alt="Lens & Light Studio - Timeless wedding photography in Bhopal"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroBg}
+          />
+        </div>
         <div className={styles.heroOverlay} aria-hidden="true" />
 
         <div className={styles.heroContent}>
           <span className={styles.heroSub}>EXPLORE THE</span>
-          <h1 className={styles.heroTitle}>PACKAGES</h1>
+          <h1 className={styles.heroTitle} aria-label="PACKAGES">
+            {"PACKAGES".split('').map((char, i) => (
+              <span
+                key={i}
+                className={styles.heroTitleChar}
+                style={{ animationDelay: `${0.32 + i * 0.05}s` }}
+              >
+                {char}
+              </span>
+            ))}
+          </h1>
           <p className={styles.heroDesc}>
             A dedicated two-photographer team documenting authentic weddings, poetic pre-weddings, and gentle family heirlooms across Bhopal, Madhya Pradesh, and destination venues nationwide.
           </p>
           <div className={styles.heroActions}>
             <Link href="/portfolio" className="btn-pill btn-pill-bronze">
               <span>View Portfolio</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </Link>
             <a
               href={whatsappHref}
@@ -87,6 +137,10 @@ export default function HomePage() {
               className="btn-pill btn-pill-outline"
             >
               <span>Check Your Date</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </a>
           </div>
         </div>
@@ -98,12 +152,12 @@ export default function HomePage() {
       {/* 3. KINEO.IRIS 5-COLUMN CATEGORY SHOWCASE STRIP */}
       <section id="collections" className={styles.categoriesStripSection} aria-label="Photography Collections">
         <div className="container">
-          <div className={styles.categoriesHeader}>
+          <div className={styles.categoriesHeader} data-reveal="fade-up">
             <span className="section-label">CURATED COLLECTIONS</span>
             <h2 className="section-title">CHOOSE YOUR SESSION</h2>
           </div>
 
-          <div className={styles.categoriesGrid}>
+          <div className={styles.categoriesGrid} data-stagger>
             {categories.map((cat, idx) => (
               <article key={idx} className={styles.categoryCard}>
                 <Link href={cat.href} className={styles.cardImgWrapper} aria-label={`View ${cat.title} collection`}>
@@ -117,7 +171,11 @@ export default function HomePage() {
                 </Link>
                 <h3 className={styles.cardTitle}>{cat.title}</h3>
                 <Link href={cat.href} className={styles.learnMoreBtn}>
-                  Learn More
+                  <span>Learn More</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </Link>
               </article>
             ))}
@@ -127,16 +185,18 @@ export default function HomePage() {
 
       {/* 4. KINEO.IRIS "MEMORABLE MOMENTS" ATMOSPHERIC BANNER */}
       <section id="moments" className={styles.quoteSection} aria-label="Memorable Moments Philosophy">
-        <Image
-          src="/images/palace-silhouette.jpg"
-          alt="Atmospheric couple silhouette"
-          fill
-          sizes="100vw"
-          className={styles.quoteBg}
-        />
+        <div className={styles.quoteBgWrapper}>
+          <Image
+            src="/images/palace-silhouette.jpg"
+            alt="Atmospheric couple silhouette"
+            fill
+            sizes="100vw"
+            className={styles.quoteBg}
+          />
+        </div>
         <div className={styles.quoteOverlay} aria-hidden="true" />
 
-        <div className={styles.quoteContent}>
+        <div className={styles.quoteContent} data-reveal="fade-up">
           <h2 className={styles.quoteTitle}>&ldquo;MEMORABLE MOMENTS&rdquo;</h2>
           <p className={styles.quoteText}>
             &ldquo;We believe the most poignant photographs aren&apos;t forced poses, but spontaneous sacred rituals, quiet glances between parents, and unscripted laughter shared between families in Bhopal. By having two dedicated lead photographers present, every angle is documented with artistic grace.&rdquo;
@@ -152,7 +212,7 @@ export default function HomePage() {
         <div className="container">
           <div className={styles.oliveGrid}>
             {/* Left: Romantic Couple Portrait */}
-            <div className={styles.oliveImageCol}>
+            <div className={styles.oliveImageCol} data-reveal="soft-zoom">
               <Image
                 src="/images/wedding-heritage.jpg"
                 alt="Couple in traditional wedding attire in heritage garden"
@@ -163,7 +223,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: Content & Accordions */}
-            <div className={styles.oliveContentCol}>
+            <div className={styles.oliveContentCol} data-reveal="fade-up">
               <span className={styles.whatsIncludedTitle}>BESPOKE EXPERIENCES</span>
               <h2 className={styles.oliveTitle}>WEDDING PACKAGES</h2>
               <p className={styles.oliveText}>
@@ -174,7 +234,7 @@ export default function HomePage() {
               </p>
 
               <span className={styles.whatsIncludedTitle}>WHATS INCLUDED?</span>
-              <ul className={styles.includedList}>
+              <ul className={styles.includedList} data-stagger>
                 <li className={styles.includedItem}>
                   <svg className={styles.includedIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -202,7 +262,7 @@ export default function HomePage() {
               </ul>
 
               {/* Interactive Accordion Toggles */}
-              <div className={styles.accordionList}>
+              <div className={styles.accordionList} data-reveal="fade-up">
                 <div
                   className={`${styles.accordionItem} ${openAccordion === 0 ? styles.accordionOpen : ''}`}
                   onClick={() => toggleAccordion(0)}
@@ -264,6 +324,10 @@ export default function HomePage() {
                   className="btn-pill btn-pill-bronze"
                 >
                   <span>Inquire for Custom Quote</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -272,7 +336,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. WHATSAPP CONVERSION CTA BANNER */}
-      <div id="contact-cta" className="container">
+      <div id="contact-cta" className="container" data-reveal="fade-up">
         <WhatsAppCTA
           title="Ready to Secure Your Celebration Date?"
           subtitle="Because we document weddings as a two-person team without substituting associate shooters, dates are reserved on a strict first-confirmed basis in Bhopal."

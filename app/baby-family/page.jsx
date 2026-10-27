@@ -44,7 +44,7 @@ export default function BabyFamilyPage() {
         </section>
 
         {/* Feature 1: The Heirloom Legacy (Studio Heritage Portrait) */}
-        <section className={styles.editorialShowcase} aria-label="The Heirloom Legacy Feature">
+        <section className={styles.editorialShowcase} data-reveal="soft-zoom" aria-label="The Heirloom Legacy Feature">
           <div className={styles.editorialGrid}>
             <div className={styles.editorialImageContainer}>
               <Image
@@ -64,7 +64,7 @@ export default function BabyFamilyPage() {
                 A classic generational portrait honoring family dignity, timeless poise, and enduring bonds. With careful attention to lighting, posture, and traditional attire, we craft portraits that become family centerpieces for decades.
               </p>
 
-              <ul className={styles.pointsList}>
+              <ul className={styles.pointsList} data-stagger>
                 <li className={styles.pointsItem}>
                   <svg className={styles.pointIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -102,7 +102,7 @@ export default function BabyFamilyPage() {
         </section>
 
         {/* Feature 2: Generations in Celebration (Wedding Stage Family Portrait) */}
-        <section className={styles.editorialShowcase} aria-label="Wedding Stage Family Portrait">
+        <section className={styles.editorialShowcase} data-reveal="soft-zoom" aria-label="Wedding Stage Family Portrait">
           <div className={styles.editorialGrid} style={{ direction: 'rtl' }}>
             <div className={styles.editorialImageContainer} style={{ direction: 'ltr' }}>
               <Image
@@ -121,7 +121,7 @@ export default function BabyFamilyPage() {
                 During weddings, family is the beating heart of every ritual. We ensure that amidst the whirlwind of ceremonies, dedicated time is created to capture the entire family together in radiant harmony, vibrant silks, and joyous smiles.
               </p>
 
-              <ul className={styles.pointsList}>
+              <ul className={styles.pointsList} data-stagger>
                 <li className={styles.pointsItem}>
                   <svg className={styles.pointIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -159,7 +159,7 @@ export default function BabyFamilyPage() {
         </section>
 
         {/* Feature 3: Lakeside Whispers & Gentle Moments */}
-        <section className={styles.editorialShowcase} aria-label="Outdoor Natural Light Family Portrait">
+        <section className={styles.editorialShowcase} data-reveal="soft-zoom" aria-label="Outdoor Natural Light Family Portrait">
           <div className={styles.editorialGrid}>
             <div className={styles.editorialImageContainer}>
               <Image
@@ -178,7 +178,7 @@ export default function BabyFamilyPage() {
                 Unhurried, candid memories in natural light. Whether by Bhopal&apos;s Upper Lake or serene outdoor gardens, we document parents and little ones in comfort, capturing spontaneous hugs, baby smiles, and genuine tenderness.
               </p>
 
-              <ul className={styles.pointsList}>
+              <ul className={styles.pointsList} data-stagger>
                 <li className={styles.pointsItem}>
                   <svg className={styles.pointIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -204,7 +204,7 @@ export default function BabyFamilyPage() {
 
         {/* Complete Family & Baby Archive Gallery */}
         <section style={{ marginBottom: '4.5rem' }} aria-label="Family and Baby Gallery Archive">
-          <div className="section-header">
+          <div className="section-header" data-reveal="fade-up">
             <div>
               <span className="section-label">ALL FAMILY WORKS</span>
               <h2 className="section-title">THE FAMILY ARCHIVE</h2>
@@ -214,7 +214,7 @@ export default function BabyFamilyPage() {
             </Link>
           </div>
 
-          <div className={portfolioStyles.galleryGrid}>
+          <div className={portfolioStyles.galleryGrid} data-stagger>
             {familyPhotos.map((item, idx) => (
               <div key={item.id} className={portfolioStyles.galleryCard}>
                 <div className={portfolioStyles.cardImageContainer}>

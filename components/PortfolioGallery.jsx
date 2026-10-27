@@ -35,7 +35,7 @@ export default function PortfolioGallery({ initialCategory = 'all' }) {
   return (
     <section className={styles.gallerySection} aria-label="Portfolio Gallery">
       {/* Category Filter Tabs */}
-      <div className={styles.filterContainer} role="tablist" aria-label="Filter portfolio by photography category">
+      <div className={styles.filterContainer} data-reveal="fade-up" role="tablist" aria-label="Filter portfolio by photography category">
         {CATEGORIES.map((cat) => {
           const isSelected = activeCategory === cat.key;
           return (
@@ -54,7 +54,7 @@ export default function PortfolioGallery({ initialCategory = 'all' }) {
       </div>
 
       {/* Grid of Authentic Photographs */}
-      <div className={styles.galleryGrid} role="region" aria-live="polite">
+      <div className={styles.galleryGrid} data-stagger role="region" aria-live="polite">
         {filteredItems.map((item, idx) => (
           <article
             key={item.id}

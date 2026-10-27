@@ -31,7 +31,7 @@ export default function ContactPage() {
         <section style={{ marginBottom: '5rem' }} aria-label="Inquiry Form and Studio Details">
           <div className={contactStyles.contactLayout}>
             {/* Left: Interactive Form */}
-            <div>
+            <div data-reveal="fade-up">
               <h2 className={contactStyles.formHeading}>
                 Check Date Availability
               </h2>
@@ -39,7 +39,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right: Studio Direct Channels */}
-            <div className={contactStyles.sidebarColumn}>
+            <div className={contactStyles.sidebarColumn} data-reveal="fade-up">
               {/* WhatsApp Quick Connect Card */}
               <div className={contactStyles.whatsappSidebarCard}>
                 <span className={contactStyles.sidebarCardBadge}>

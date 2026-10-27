@@ -216,9 +216,21 @@ img {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   line-height: 1;
-  transition: var(--transition-smooth);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              color 0.35s ease;
   cursor: pointer;
   text-decoration: none;
+}
+
+.btn-pill svg {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill:hover svg {
+  transform: translateX(4px);
 }
 
 /* Bronze Solid Pill (KINEO.IRIS Signature) & Primary Pill */
@@ -233,7 +245,7 @@ img {
 .btn-pill-primary:hover {
   background-color: var(--color-accent-bronze-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(184, 157, 122, 0.35);
+  box-shadow: 0 10px 28px rgba(184, 157, 122, 0.38);
 }
 
 .btn-pill-outline {
@@ -246,6 +258,7 @@ img {
   background-color: var(--color-accent-bronze);
   color: #121110;
   transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(184, 157, 122, 0.28);
 }
 
 .btn-pill-whatsapp {
@@ -257,7 +270,76 @@ img {
 .btn-pill-whatsapp:hover {
   background-color: var(--color-whatsapp-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.35);
+}
+
+.btn-pill-whatsapp:hover svg {
+  transform: scale(1.12) rotate(6deg);
+}
+
+/* ===================================================
+   CINEMATIC SCROLL REVEAL SYSTEM
+   Graceful degradation: elements visible by default;
+   activated only when .js-reveal-ready is present.
+   =================================================== */
+html.js-reveal-ready .reveal-on-scroll,
+html.js-reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+html.js-reveal-ready [data-reveal="soft-zoom"] {
+  opacity: 0;
+  transform: scale(0.97) translateY(18px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-reveal-ready [data-reveal="fade-in"] {
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-reveal-ready .reveal-on-scroll.is-revealed,
+html.js-reveal-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger delays for child elements */
+html.js-reveal-ready [data-stagger] > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-reveal-ready [data-stagger].is-revealed > *:nth-child(1) { transition-delay: 0.05s; }
+html.js-reveal-ready [data-stagger].is-revealed > *:nth-child(2) { transition-delay: 0.14s; }
+html.js-reveal-ready [data-stagger].is-revealed > *:nth-child(3) { transition-delay: 0.23s; }
+html.js-reveal-ready [data-stagger].is-revealed > *:nth-child(4) { transition-delay: 0.32s; }
+html.js-reveal-ready [data-stagger].is-revealed > *:nth-child(5) { transition-delay: 0.41s; }
+html.js-reveal-ready [data-stagger].is-revealed > *:nth-child(6) { transition-delay: 0.50s; }
+
+html.js-reveal-ready [data-stagger].is-revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility: Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html.js-reveal-ready .reveal-on-scroll,
+  html.js-reveal-ready [data-reveal],
+  html.js-reveal-ready [data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* ACCESSIBILITY FOCUS */

@@ -13,7 +13,7 @@ export default function WhatsAppCTA({
 
   return (
     <section className={styles.ctaBannerSection} aria-label="WhatsApp Enquiry Call to Action">
-      <div className={styles.ctaBannerContainer}>
+      <div className={styles.ctaBannerContainer} data-reveal="fade-up">
         <div className={styles.ctaContent}>
           <span className={styles.ctaBadge}>DIRECT STUDIO INQUIRY</span>
           <h2 className={styles.ctaTitle}>{title}</h2>

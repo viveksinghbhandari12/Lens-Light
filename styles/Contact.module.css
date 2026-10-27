@@ -4,6 +4,12 @@
   border-radius: var(--radius-card);
   padding: clamp(1.75rem, 4vw, 3rem);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.form:hover {
+  border-color: rgba(216, 195, 159, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .errorMessage {
@@ -171,6 +177,12 @@
   padding: clamp(1.5rem, 2.5vw, 2.25rem);
   border: 1px solid var(--color-border-dark);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.whatsappSidebarCard:hover {
+  border-color: rgba(216, 195, 159, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .sidebarCardBadge {
@@ -210,6 +222,12 @@
   padding: clamp(1.5rem, 2.5vw, 2.25rem);
   border: 1px solid var(--color-border-dark);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.detailsCard:hover {
+  border-color: rgba(216, 195, 159, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .channelList {

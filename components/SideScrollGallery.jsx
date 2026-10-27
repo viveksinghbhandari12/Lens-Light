@@ -12,6 +12,11 @@ export default function SideScrollGallery() {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartX = useRef(0);
+  const dragStartScrollLeft = useRef(0);
+  const isMouseDown = useRef(false);
+
   const updateScrollStatus = () => {
     const el = scrollContainerRef.current;
     if (!el) return;
@@ -34,6 +39,31 @@ export default function SideScrollGallery() {
     return () => el.removeEventListener('scroll', updateScrollStatus);
   }, []);
 
+  const handleMouseDown = (e) => {
+    if (e.button !== 0) return;
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    isMouseDown.current = true;
+    dragStartX.current = e.pageX - el.offsetLeft;
+    dragStartScrollLeft.current = el.scrollLeft;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isMouseDown.current) return;
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    e.preventDefault();
+    if (!isDragging) setIsDragging(true);
+    const x = e.pageX - el.offsetLeft;
+    const walk = (x - dragStartX.current) * 1.35;
+    el.scrollLeft = dragStartScrollLeft.current - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    isMouseDown.current = false;
+    if (isDragging) setIsDragging(false);
+  };
+
   const handleScroll = (direction) => {
     const el = scrollContainerRef.current;
     if (!el) return;
@@ -49,7 +79,7 @@ export default function SideScrollGallery() {
     <section id="side-scroll" className={styles.sideScrollSection} aria-label="Editorial Side Scroll Gallery">
       <div className="container">
         {/* Section Header with Navigation Arrows */}
-        <div className={styles.sectionHeaderRow}>
+        <div className={styles.sectionHeaderRow} data-reveal="fade-up">
           <div>
             <span className="section-label">HORIZON STORIES • SIDE SCROLL</span>
             <h2 className={styles.galleryHeading}>EDITORIAL REEL</h2>
@@ -87,8 +117,12 @@ export default function SideScrollGallery() {
 
       {/* Horizontal Scroll Track */}
       <div
-        className={styles.horizontalTrack}
+        className={`${styles.horizontalTrack} ${isDragging ? styles.isDragging : ''}`}
         ref={scrollContainerRef}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUpOrLeave}
+        onMouseLeave={handleMouseUpOrLeave}
         tabIndex={0}
         role="region"
         aria-label="Horizontal side-scrolling image gallery"
@@ -107,7 +141,7 @@ export default function SideScrollGallery() {
               />
               <div className={styles.reelOverlay}>
                 <span className={styles.reelIndex}>0{idx + 1}</span>
-                <div>
+                <div className={styles.reelCaption}>
                   <span className={styles.reelCategory}>{item.category}</span>
                   <h3 className={styles.reelTitle}>{item.title}</h3>
                 </div>
@@ -121,7 +155,7 @@ export default function SideScrollGallery() {
 
       {/* Horizontal Side Scrollbar & Progress Indicator */}
       <div className="container">
-        <div className={styles.progressBarWrapper}>
+        <div className={styles.progressBarWrapper} data-reveal="fade-in">
           <div className={styles.progressTrack}>
             <div
               className={styles.progressThumb}

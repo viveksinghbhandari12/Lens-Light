@@ -1,6 +1,7 @@
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ScrollRevealManager from '@/components/ScrollRevealManager';
 import { STUDIO_INFO } from '@/data/portfolioData';
 
 export const metadata = {
@@ -104,6 +105,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <ScrollRevealManager />
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

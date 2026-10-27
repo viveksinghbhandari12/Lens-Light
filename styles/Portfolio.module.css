@@ -70,13 +70,15 @@
   overflow: hidden;
   border: 1px solid var(--color-border-dark);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  transition: var(--transition-smooth);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.4s ease;
 }
 
 .galleryCard:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
   border-color: var(--color-accent-bronze);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.48);
 }
 
 .cardImageContainer {
@@ -90,12 +92,12 @@
 
 .cardImage {
   object-fit: cover !important;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
   filter: brightness(0.9);
 }
 
 .galleryCard:hover .cardImage {
-  transform: scale(1.05);
+  transform: scale(1.04);
   filter: brightness(1);
 }
 
@@ -113,7 +115,7 @@
     rgba(18, 17, 16, 0.92) 100%
   );
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -127,6 +129,13 @@
 
 .overlayMeta {
   margin-top: auto;
+  transform: translateY(8px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.galleryCard:hover .overlayMeta,
+.cardImageContainer:focus-visible .overlayMeta {
+  transform: translateY(0);
 }
 
 .overlayCategory {
@@ -166,6 +175,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.35s ease;
+}
+
+.galleryCard:hover .zoomIconWrapper {
+  transform: scale(1.08);
+  background: rgba(184, 157, 122, 0.4);
 }
 
 /* Static Card Caption */

@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         {/* Top Strip / Editorial Masthead */}
-        <div className={styles.topSection}>
+        <div className={styles.topSection} data-reveal="fade-up">
           <div className={styles.brandColumn}>
             <span className={styles.mastheadBrand}>LENS &amp; LIGHT</span>
             <span className={styles.mastheadSub}>PHOTOGRAPHY • BHOPAL</span>

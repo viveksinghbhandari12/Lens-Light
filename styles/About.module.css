@@ -8,6 +8,12 @@
   border-radius: var(--radius-card);
   border: 1px solid var(--color-border-dark);
   padding: clamp(2rem, 4vw, 3.5rem);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.teamIntroSection:hover {
+  border-color: rgba(216, 195, 159, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .teamGrid {
@@ -29,6 +35,11 @@
 
 .teamImage {
   object-fit: cover !important;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.teamIntroSection:hover .teamImage {
+  transform: scale(1.035);
 }
 
 .teamBioContent {
@@ -102,11 +113,13 @@
   border: 1px solid var(--color-border-dark);
   border-radius: var(--radius-card);
   padding: clamp(1.5rem, 2.5vw, 2rem);
-  transition: var(--transition-smooth);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.4s ease;
 }
 
 .valueCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   border-color: var(--color-accent-bronze);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
@@ -192,6 +205,13 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   color: var(--color-text-champagne);
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.localBadge:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent-bronze);
+  background: rgba(18, 17, 16, 0.75);
 }
 
 .connectCard {
@@ -201,6 +221,12 @@
   border: 1px solid var(--color-border-dark);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   text-align: center;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.connectCard:hover {
+  border-color: rgba(216, 195, 159, 0.3);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
 }
 
 .connectBadge {

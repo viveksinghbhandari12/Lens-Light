@@ -44,7 +44,7 @@ export default function PreWeddingPage() {
         </section>
 
         {/* Feature 1: The Golden Jaali */}
-        <section className={styles.editorialShowcase} aria-label="The Golden Jaali Story">
+        <section className={styles.editorialShowcase} data-reveal="soft-zoom" aria-label="The Golden Jaali Story">
           <div className={styles.editorialGrid}>
             <div className={styles.editorialImageContainer}>
               <Image
@@ -64,7 +64,7 @@ export default function PreWeddingPage() {
                 When ancient craftsmanship meets contemporary romance. We utilize the natural geometry of historic jaali screens to cast intricate shadow tapestries, placing the quiet embrace of the couple at the center of the frame.
               </p>
 
-              <ul className={styles.pointsList}>
+              <ul className={styles.pointsList} data-stagger>
                 <li className={styles.pointsItem}>
                   <svg className={styles.pointIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -102,7 +102,7 @@ export default function PreWeddingPage() {
         </section>
 
         {/* Feature 2: Whispering Sandstone */}
-        <section className={styles.editorialShowcase} aria-label="Whispering Sandstone Feature">
+        <section className={styles.editorialShowcase} data-reveal="soft-zoom" aria-label="Whispering Sandstone Feature">
           <div className={styles.editorialGrid} style={{ direction: 'rtl' }}>
             <div className={styles.editorialImageContainer} style={{ direction: 'ltr' }}>
               <Image
@@ -121,7 +121,7 @@ export default function PreWeddingPage() {
                 Capturing grace in motion. A flowing sheer veil suspended in the palace breeze, evoking the timeless grandeur of royalty while keeping the couple’s tender connection immediate and real.
               </p>
 
-              <ul className={styles.pointsList}>
+              <ul className={styles.pointsList} data-stagger>
                 <li className={styles.pointsItem}>
                   <svg className={styles.pointIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -147,7 +147,7 @@ export default function PreWeddingPage() {
 
         {/* Pre-Wedding Grid Highlights */}
         <section style={{ marginBottom: '4rem' }} aria-label="Pre-Wedding Highlights">
-          <div className="section-header">
+          <div className="section-header" data-reveal="fade-up">
             <div>
               <span className="section-label">SELECTED STORIES</span>
               <h2 className="section-title">PRE-WEDDING ARCHIVE</h2>
@@ -157,7 +157,7 @@ export default function PreWeddingPage() {
             </Link>
           </div>
 
-          <div className={portfolioStyles.galleryGrid}>
+          <div className={portfolioStyles.galleryGrid} data-stagger>
             {preWeddingPhotos.map((item) => (
               <div key={item.id} className={portfolioStyles.galleryCard}>
                 <div className={portfolioStyles.cardImageContainer}>

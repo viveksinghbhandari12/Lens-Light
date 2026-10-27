@@ -18,6 +18,7 @@
   font-weight: 600;
   margin-bottom: 0.75rem;
   display: block;
+  animation: pageHeroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.08s backwards;
 }
 
 .title {
@@ -29,6 +30,7 @@
   letter-spacing: 0.02em;
   margin-bottom: 1rem;
   text-wrap: balance;
+  animation: pageHeroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s backwards;
 }
 
 .description {
@@ -39,6 +41,7 @@
   max-width: 65ch;
   margin-bottom: 1.75rem;
   text-wrap: pretty;
+  animation: pageHeroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
 }
 
 .actions {
@@ -46,6 +49,18 @@
   gap: 1rem;
   flex-wrap: wrap;
   align-items: center;
+  animation: pageHeroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.42s backwards;
+}
+
+@keyframes pageHeroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Editorial Story Card */
@@ -56,6 +71,12 @@
   border: 1px solid var(--color-border-dark);
   padding: clamp(2rem, 3.5vw, 3.25rem);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.editorialShowcase:hover {
+  border-color: rgba(216, 195, 159, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .editorialGrid {
@@ -77,6 +98,11 @@
 
 .editorialImage {
   object-fit: cover !important;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorialShowcase:hover .editorialImage {
+  transform: scale(1.035);
 }
 
 .editorialDetails {
@@ -132,6 +158,11 @@
   color: var(--color-text-light);
   font-weight: 500;
   line-height: 1.5;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pointsItem:hover {
+  transform: translateX(4px);
 }
 
 .pointIcon {

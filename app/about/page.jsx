@@ -30,7 +30,7 @@ export default function AboutPage() {
         </section>
 
         {/* Team Narrative Grid */}
-        <section className={styles.teamIntroSection} aria-label="Our Story">
+        <section className={styles.teamIntroSection} data-reveal="soft-zoom" aria-label="Our Story">
           <div className={styles.teamGrid}>
             <div className={styles.teamImageContainer}>
               <Image
@@ -72,12 +72,12 @@ export default function AboutPage() {
 
         {/* Our Three Core Values */}
         <section className={styles.valuesSection} aria-label="Studio Principles">
-          <div className={styles.valuesHeader}>
+          <div className={styles.valuesHeader} data-reveal="fade-up">
             <span className="section-label">HOW WE WORK</span>
             <h2 className={styles.valuesTitle}>UNCOMPROMISING PRINCIPLES</h2>
           </div>
 
-          <div className={styles.valuesGrid}>
+          <div className={styles.valuesGrid} data-stagger>
             <div className={styles.valueCard}>
               <span className={styles.valueNum}>01</span>
               <h3 className={styles.valueTitle}>Authentic Emotion</h3>
@@ -105,7 +105,7 @@ export default function AboutPage() {
         </section>
 
         {/* Bhopal Heritage Connection */}
-        <section className={styles.localSection} aria-label="Bhopal and Central India Service Area">
+        <section className={styles.localSection} data-reveal="soft-zoom" aria-label="Bhopal and Central India Service Area">
           <div className={styles.localGrid}>
             <div>
               <span className="section-label">CENTRAL INDIA HERITAGE</span>

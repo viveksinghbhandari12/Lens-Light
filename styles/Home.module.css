@@ -18,16 +18,40 @@
   border-bottom-right-radius: 50% clamp(40px, 6vw, 90px);
 }
 
+.heroBgWrapper {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 60px);
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(var(--hero-scroll-y, 0px));
+  will-change: transform;
+}
+
 .heroBg {
   object-fit: cover !important;
   object-position: center 30% !important;
-  z-index: 1;
   filter: brightness(0.65) contrast(1.08);
-  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: heroBgReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, filter;
+}
+
+@keyframes heroBgReveal {
+  0% {
+    transform: scale(1.06);
+    filter: brightness(0.35) contrast(1.15);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(0.65) contrast(1.08);
+  }
 }
 
 .heroSection:hover .heroBg {
-  transform: scale(1.03);
+  transform: scale(1.02);
+  transition: transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .heroOverlay {
@@ -60,6 +84,7 @@
   color: var(--color-accent-bronze);
   display: block;
   margin-bottom: 0.85rem;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
 }
 
 .heroTitle {
@@ -73,6 +98,31 @@
   margin-bottom: 1.35rem;
   text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
   text-wrap: balance;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.02em;
+}
+
+.heroTitleChar {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(22px) scale(0.96);
+  animation: heroCharReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes heroCharReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.96);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
 
 .heroDesc {
@@ -83,6 +133,7 @@
   max-width: 620px;
   margin: 0 auto 2.25rem;
   text-wrap: pretty;
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
 }
 
 .heroActions {
@@ -91,6 +142,18 @@
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.85s backwards;
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 5-COLUMN / MULTI-CARD CATEGORY STRIP (KINEO.IRIS EXACT LAYOUT) */
@@ -115,11 +178,11 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: var(--transition-smooth);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .categoryCard:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
 }
 
 .cardImgWrapper {
@@ -133,6 +196,21 @@
   border: 1px solid var(--color-border-dark);
 }
 
+.cardImgWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 17, 16, 0.5) 0%, transparent 65%);
+  opacity: 0.2;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.categoryCard:hover .cardImgWrapper::after {
+  opacity: 0.7;
+}
+
 .cardImg {
   object-fit: cover !important;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -140,7 +218,7 @@
 }
 
 .categoryCard:hover .cardImg {
-  transform: scale(1.06);
+  transform: scale(1.045);
   filter: brightness(1);
 }
 
@@ -154,11 +232,20 @@
   margin-bottom: 0.75rem;
   line-height: 1.2;
   text-wrap: balance;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.35s ease;
+}
+
+.categoryCard:hover .cardTitle {
+  transform: translateY(-2px);
+  color: var(--color-accent-gold);
 }
 
 /* KINEO.IRIS Soft Bronze Pill Button */
 .learnMoreBtn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   padding: 0.45rem 1.15rem;
   background-color: var(--color-accent-bronze);
   color: #121110;
@@ -168,12 +255,23 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  transition: var(--transition-smooth);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s ease,
+              box-shadow 0.35s ease;
 }
 
-.learnMoreBtn:hover {
+.learnMoreBtn svg {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.categoryCard:hover .learnMoreBtn {
   background-color: var(--color-accent-bronze-hover);
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 157, 122, 0.35);
+}
+
+.categoryCard:hover .learnMoreBtn svg {
+  transform: translateX(3px);
 }
 
 /* ATMOSPHERIC QUOTE / "MEMORABLE MOMENTS" SECTION */
@@ -189,10 +287,26 @@
   margin: clamp(2.5rem, 5vw, 4.5rem) 0;
 }
 
+.quoteBgWrapper {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 80px);
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(var(--moments-scroll-y, 0px));
+  will-change: transform;
+}
+
 .quoteBg {
   object-fit: cover !important;
-  z-index: 1;
   filter: brightness(0.3) contrast(1.15);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quoteSection:hover .quoteBg {
+  transform: scale(1.02);
 }
 
 .quoteOverlay {
@@ -273,10 +387,21 @@
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(216, 195, 159, 0.2);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.oliveImageCol:hover {
+  border-color: rgba(216, 195, 159, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
 }
 
 .oliveImg {
   object-fit: cover !important;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.oliveImageCol:hover .oliveImg {
+  transform: scale(1.035);
 }
 
 .oliveContentCol {
@@ -332,6 +457,11 @@
   font-size: 0.925rem;
   line-height: 1.5;
   color: var(--color-text-light);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.includedItem:hover {
+  transform: translateX(4px);
 }
 
 .includedIcon {
@@ -355,12 +485,15 @@
   border-radius: var(--radius-sm);
   padding: 1.1rem 1.35rem;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: background 0.35s ease,
+              border-color 0.35s ease,
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .accordionItem:hover {
   background: rgba(18, 17, 16, 0.55);
   border-color: var(--color-accent-bronze);
+  transform: translateY(-2px);
 }
 
 .accordionHeader {
@@ -382,7 +515,7 @@
   width: 18px;
   height: 18px;
   color: var(--color-accent-bronze);
-  transition: transform 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .accordionOpen .accordionChevron {
@@ -396,6 +529,18 @@
   color: #B5B2AA;
   line-height: 1.7;
   text-wrap: pretty;
+  animation: accordionFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes accordionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* CTA BANNER SECTION */
@@ -413,6 +558,13 @@
   align-items: center;
   gap: 2.25rem;
   flex-wrap: wrap;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaBannerContainer:hover {
+  border-color: rgba(216, 195, 159, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
 }
 
 .ctaContent {

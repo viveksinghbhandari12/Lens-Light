@@ -42,7 +42,9 @@
   color: var(--color-accent-bronze);
 }
 
-.input, .select, .textarea {
+.input,
+.select,
+.textarea {
   width: 100%;
   padding: 0.85rem 1.15rem;
   border: 1px solid var(--color-border-dark);
@@ -54,7 +56,9 @@
   transition: var(--transition-smooth);
 }
 
-.input:focus, .select:focus, .textarea:focus {
+.input:focus,
+.select:focus,
+.textarea:focus {
   border-color: var(--color-accent-bronze);
   box-shadow: 0 0 0 2px rgba(184, 157, 122, 0.2);
   background-color: rgba(18, 17, 16, 0.9);
@@ -132,5 +136,153 @@
   .formRow {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+}
+
+/* Contact Page Layout & Sidebar */
+.contactLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.sidebarColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+  font-weight: 500;
+  color: var(--color-text-champagne);
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+  text-wrap: balance;
+}
+
+.whatsappSidebarCard {
+  background: var(--color-bg-card);
+  color: var(--color-text-light);
+  border-radius: var(--radius-card);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  border: 1px solid var(--color-border-dark);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.sidebarCardBadge {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent-bronze);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.sidebarCardTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: 500;
+  color: var(--color-text-champagne);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+  text-wrap: balance;
+}
+
+.sidebarCardDesc {
+  font-family: var(--font-sans);
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  text-wrap: pretty;
+}
+
+.detailsCard {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-card);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  border: 1px solid var(--color-border-dark);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.channelList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.channelItem {
+  margin-bottom: 0;
+}
+
+.channelLabel {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent-bronze);
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.channelValue {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  display: block;
+}
+
+.channelValue:hover {
+  color: var(--color-text-champagne);
+}
+
+.channelText {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-top: 0.2rem;
+  text-wrap: pretty;
+}
+
+.noticeCard {
+  padding: 1.5rem;
+  border-radius: var(--radius-card);
+  background-color: rgba(43, 48, 35, 0.4);
+  border: 1px solid rgba(216, 195, 159, 0.2);
+}
+
+.noticeTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-text-champagne);
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
+}
+
+.noticeText {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+@media (max-width: 900px) {
+  .contactLayout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }

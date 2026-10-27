@@ -1,6 +1,6 @@
 /* KINEO.IRIS THEME - LENS & LIGHT STUDIO (BHOPAL) */
 /* MOODY, CINEMATIC, EARTHY LUXURY EDITORIAL PALETTE */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   /* Rich Earthy Dark Palette */
@@ -27,10 +27,18 @@
   --color-whatsapp: #25D366;
   --color-whatsapp-dark: #1EBE5D;
 
-  /* Fonts */
-  --font-display: 'Italiana', 'Cormorant Garamond', Georgia, serif;
+  /* Fallback aliases for theme consistency */
+  --color-surface: var(--color-bg-card);
+  --color-border: var(--color-border-dark);
+  --color-ink-primary: var(--color-text-champagne);
+  --color-ink-secondary: var(--color-text-muted);
+  --color-ink-muted: #88857E;
+  --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  /* Fonts: Cormorant Garamond for Headings & Manrope for Body / UI */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
 
   /* Radii & Shadows */
   --radius-card: 14px;
@@ -71,28 +79,44 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--color-text-champagne);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.15;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.16;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 500;
+  line-height: 1.22;
+}
+
+h4 {
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 p {
   margin-bottom: 1rem;
-  font-size: 0.98rem;
+  font-family: var(--font-sans);
+  font-size: 0.975rem;
   color: var(--color-text-muted);
   line-height: 1.75;
+  letter-spacing: 0.01em;
+  text-wrap: pretty;
 }
 
 p:last-child {
@@ -105,8 +129,11 @@ a {
   transition: var(--transition-smooth);
 }
 
+button, input, select, textarea {
+  font-family: var(--font-sans);
+}
+
 button {
-  font-family: inherit;
   cursor: pointer;
   border: none;
   background: transparent;
@@ -125,12 +152,12 @@ img {
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1.25rem, 3.5vw, 3.5rem);
-  padding-right: clamp(1.25rem, 3.5vw, 3.5rem);
+  padding-left: clamp(1.25rem, 4vw, 3.5rem);
+  padding-right: clamp(1.25rem, 4vw, 3.5rem);
 }
 
 .framed-page {
-  padding-bottom: clamp(3rem, 6vw, 6rem);
+  padding-bottom: clamp(3.5rem, 6vw, 6rem);
 }
 
 /* SECTION HEADINGS */
@@ -138,6 +165,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 1.5rem;
   margin-bottom: clamp(2rem, 4vw, 3.5rem);
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--color-border-dark);
@@ -145,19 +173,33 @@ img {
 
 .section-label {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.725rem;
   text-transform: uppercase;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.25em;
   color: var(--color-accent-bronze);
   font-weight: 600;
   margin-bottom: 0.5rem;
   display: block;
+  line-height: 1.4;
 }
 
 .section-title {
+  font-family: var(--font-display);
   font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 500;
   margin: 0;
   color: var(--color-text-champagne);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+@media (max-width: 640px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
 }
 
 /* BUTTONS */
@@ -168,23 +210,27 @@ img {
   gap: 0.75rem;
   padding: 0.75rem 1.65rem;
   border-radius: var(--radius-pill);
-  font-size: 0.775rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  line-height: 1;
   transition: var(--transition-smooth);
   cursor: pointer;
   text-decoration: none;
 }
 
-/* Bronze Solid Pill (KINEO.IRIS Signature) */
-.btn-pill-bronze {
+/* Bronze Solid Pill (KINEO.IRIS Signature) & Primary Pill */
+.btn-pill-bronze,
+.btn-pill-primary {
   background-color: var(--color-accent-bronze);
   color: #121110;
   font-weight: 700;
 }
 
-.btn-pill-bronze:hover {
+.btn-pill-bronze:hover,
+.btn-pill-primary:hover {
   background-color: var(--color-accent-bronze-hover);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(184, 157, 122, 0.35);

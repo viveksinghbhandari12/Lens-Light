@@ -1,6 +1,7 @@
 import ContactForm from '@/components/ContactForm';
 import { STUDIO_INFO } from '@/data/portfolioData';
 import heroStyles from '@/styles/PageHero.module.css';
+import contactStyles from '@/styles/Contact.module.css';
 
 export const metadata = {
   title: 'Contact Lens & Light Studio | Bhopal Wedding & Portrait Photography',
@@ -28,26 +29,26 @@ export default function ContactPage() {
 
         {/* Contact Layout: Form + Studio Details */}
         <section style={{ marginBottom: '5rem' }} aria-label="Inquiry Form and Studio Details">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 'clamp(2rem, 5vw, 4.5rem)', alignItems: 'start' }}>
+          <div className={contactStyles.contactLayout}>
             {/* Left: Interactive Form */}
             <div>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', marginBottom: '1.25rem' }}>
+              <h2 className={contactStyles.formHeading}>
                 Check Date Availability
               </h2>
               <ContactForm />
             </div>
 
             {/* Right: Studio Direct Channels */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <div className={contactStyles.sidebarColumn}>
               {/* WhatsApp Quick Connect Card */}
-              <div style={{ background: '#121212', color: '#FFFFFF', borderRadius: 'var(--radius-card)', padding: '2rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-                <span style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--color-accent-gold)', fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>
+              <div className={contactStyles.whatsappSidebarCard}>
+                <span className={contactStyles.sidebarCardBadge}>
                   INSTANT RESPONSE
                 </span>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', color: '#FFFFFF', marginBottom: '0.75rem' }}>
+                <h3 className={contactStyles.sidebarCardTitle}>
                   Direct WhatsApp Chat
                 </h3>
-                <p style={{ fontSize: '0.925rem', color: '#B0B3B8', lineHeight: '1.6', marginBottom: '1.5rem' }}>
+                <p className={contactStyles.sidebarCardDesc}>
                   Prefer messaging directly? Tap below to open a direct conversation with our two-photographer team.
                 </p>
                 <a
@@ -65,48 +66,48 @@ export default function ContactPage() {
               </div>
 
               {/* Direct Details Card */}
-              <div style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius-card)', padding: '2rem', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-subtle)' }}>
-                <span style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--color-ink-muted)', fontWeight: 600, display: 'block', marginBottom: '0.75rem' }}>
+              <div className={contactStyles.detailsCard}>
+                <span className={contactStyles.sidebarCardBadge}>
                   STUDIO CHANNELS
                 </span>
                 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                  <div>
-                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-ink-muted)', display: 'block' }}>
+                <div className={contactStyles.channelList}>
+                  <div className={contactStyles.channelItem}>
+                    <span className={contactStyles.channelLabel}>
                       Direct Phone
                     </span>
-                    <a href={`tel:${STUDIO_INFO.phone}`} style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--color-ink-primary)' }}>
+                    <a href={`tel:${STUDIO_INFO.phone}`} className={contactStyles.channelValue}>
                       {STUDIO_INFO.phone}
                     </a>
                   </div>
 
-                  <div>
-                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-ink-muted)', display: 'block' }}>
+                  <div className={contactStyles.channelItem}>
+                    <span className={contactStyles.channelLabel}>
                       Email Inquiries
                     </span>
-                    <a href={`mailto:${STUDIO_INFO.email}`} style={{ fontSize: '1.05rem', color: 'var(--color-ink-primary)' }}>
+                    <a href={`mailto:${STUDIO_INFO.email}`} className={contactStyles.channelValue}>
                       {STUDIO_INFO.email}
                     </a>
                   </div>
 
-                  <div>
-                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-ink-muted)', display: 'block' }}>
+                  <div className={contactStyles.channelItem}>
+                    <span className={contactStyles.channelLabel}>
                       Service Area
                     </span>
-                    <p style={{ fontSize: '0.95rem', color: 'var(--color-ink-secondary)', marginTop: '0.2rem' }}>
-                      <strong>Primary Base:</strong> Bhopal, Madhya Pradesh<br />
-                      <strong>Coverage:</strong> Central India & Destination Weddings Nationwide
+                    <p className={contactStyles.channelText}>
+                      <strong style={{ color: 'var(--color-text-champagne)' }}>Primary Base:</strong> Bhopal, Madhya Pradesh<br />
+                      <strong style={{ color: 'var(--color-text-champagne)' }}>Coverage:</strong> Central India & Destination Weddings Nationwide
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* Booking Protocol Notice */}
-              <div style={{ padding: '1.5rem', borderRadius: 'var(--radius-card)', backgroundColor: '#F8F7F4', border: '1px solid var(--color-border)' }}>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.4rem', color: 'var(--color-ink-primary)' }}>
-                  A Note on Dates & Bookings
+              <div className={contactStyles.noticeCard}>
+                <h4 className={contactStyles.noticeTitle}>
+                  A Note on Dates &amp; Bookings
                 </h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-ink-secondary)', lineHeight: '1.6' }}>
+                <p className={contactStyles.noticeText}>
                   Because we shoot as a two-person team without substituting associate shooters, dates are reserved on a strict first-confirmed basis with an initial retainer.
                 </p>
               </div>

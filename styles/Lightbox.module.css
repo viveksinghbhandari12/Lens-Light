@@ -143,17 +143,23 @@
 
 .captionTitle {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
   color: #FFFFFF;
   font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   margin-bottom: 0.25rem;
+  text-wrap: balance;
 }
 
 .captionDesc {
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   color: #B5B8BC;
+  line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
+  text-wrap: pretty;
 }
 
 @media (max-width: 768px) {

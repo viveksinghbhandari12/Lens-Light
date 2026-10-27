@@ -122,16 +122,16 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ background: '#FFFFFF', padding: '2rem', borderRadius: 'var(--radius-card)', border: '1px solid var(--color-border)' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.18em', color: 'var(--color-accent-gold)', display: 'block', marginBottom: '0.5rem' }}>
+            <div>
+              <div className={styles.connectCard}>
+                <span className={styles.connectBadge}>
                   READY TO CONNECT?
                 </span>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Meet Over Coffee or Video Call</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--color-ink-secondary)', marginBottom: '1.5rem' }}>
+                <h3 className={styles.connectTitle}>Meet Over Coffee or Video Call</h3>
+                <p className={styles.connectDesc}>
                   We would love to hear your story and discuss how we can document your upcoming celebration.
                 </p>
-                <Link href="/contact" className="btn-pill btn-pill-primary" style={{ width: '100%' }}>
+                <Link href="/contact" className="btn-pill btn-pill-bronze" style={{ width: '100%' }}>
                   <span>Get in Touch</span>
                 </Link>
               </div>

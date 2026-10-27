@@ -82,13 +82,6 @@ export default function Footer() {
           <p className={styles.copyright}>
             &copy; {currentYear} {STUDIO_INFO.name}. All rights reserved.
           </p>
-          <div className={styles.policyTags}>
-            <span>100% Authentic Studio Photography</span>
-            <span>•</span>
-            <span>Zero AI Generated Imagery</span>
-            <span>•</span>
-            <span>Heptley GROW Plan</span>
-          </div>
         </div>
       </div>
     </footer>

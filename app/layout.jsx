@@ -22,6 +22,16 @@ export const metadata = {
   ],
   authors: [{ name: STUDIO_INFO.name }],
   creator: STUDIO_INFO.name,
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
